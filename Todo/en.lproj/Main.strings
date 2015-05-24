@@ -1,0 +1,27 @@
+
+/* Class = "UINavigationItem"; title = "Add new todo"; ObjectID = "21H-cf-0IM"; */
+"21H-cf-0IM.title" = "Add new todo";
+
+/* Class = "UIButton"; normalTitle = "Add location"; ObjectID = "G7H-Zt-CKE"; */
+"G7H-Zt-CKE.normalTitle" = "Add location";
+
+/* Class = "UIBarButtonItem"; title = "Save"; ObjectID = "LgU-UA-1ct"; */
+"LgU-UA-1ct.title" = "Save";
+
+/* Class = "UITextField"; placeholder = "Description (optional)"; ObjectID = "MN9-A1-1To"; */
+"MN9-A1-1To.placeholder" = "Description (optional)";
+
+/* Class = "UITableViewController"; title = "My todos"; ObjectID = "fOw-28-Bim"; */
+"fOw-28-Bim.title" = "My todos";
+
+/* Class = "UIViewController"; title = "Add new todo"; ObjectID = "kzm-Xc-g6d"; */
+"kzm-Xc-g6d.title" = "Add new todo";
+
+/* Class = "UINavigationItem"; title = "My todo's"; ObjectID = "mkP-Cm-edV"; */
+"mkP-Cm-edV.title" = "My todo's";
+
+/* Class = "UITextField"; placeholder = "Title"; ObjectID = "vjx-YA-VkN"; */
+"vjx-YA-VkN.placeholder" = "Title";
+
+/* Class = "UILabel"; text = "Buy shampoo"; ObjectID = "y2J-gt-nj2"; */
+"y2J-gt-nj2.text" = "Buy shampoo";

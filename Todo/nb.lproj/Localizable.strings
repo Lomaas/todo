@@ -1,0 +1,11 @@
+/* 
+  Localization.strings
+  Todo
+
+  Created by Simen Johannessen on 24/05/15.
+  Copyright (c) 2015 lomas. All rights reserved.
+*/
+
+
+"titleToShort"="Tittelen er for kort";
+"titleToShortDescription"="Tittelen må ha mer enn en bokstav";
