@@ -32,16 +32,22 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
         locationManager.delegate = nil
     }
     
-    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-        println("Location updated")
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [AnyObject]) {
+        var bgIdentifier: UIBackgroundTaskIdentifier!
+
+        bgIdentifier = UIApplication.sharedApplication().beginBackgroundTaskWithExpirationHandler({
+            UIApplication.sharedApplication().endBackgroundTask(bgIdentifier)
+        })
+        print("Location updated")
+        
         let location = locations.last as! CLLocation
         let loc = Location(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
         
         delegate?.locationManager(didUpdateLocation: loc)
-
+        
         if let todos = Todos.todosCloseBy(location) {
             NotificationService.showNotifications(todos)
         }
-   
+
     }
 }

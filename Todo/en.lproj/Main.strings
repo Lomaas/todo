@@ -1,6 +1,6 @@
 
 /* Class = "UINavigationItem"; title = "Add new todo"; ObjectID = "21H-cf-0IM"; */
-"21H-cf-0IM.title" = "Add new todo";
+"21H-cf-0IM.title" = "Add new reminder";
 
 /* Class = "UIButton"; normalTitle = "Add location"; ObjectID = "G7H-Zt-CKE"; */
 "G7H-Zt-CKE.normalTitle" = "Add location";
@@ -12,13 +12,13 @@
 "MN9-A1-1To.placeholder" = "Description (optional)";
 
 /* Class = "UITableViewController"; title = "My todos"; ObjectID = "fOw-28-Bim"; */
-"fOw-28-Bim.title" = "My todos";
+"fOw-28-Bim.title" = "My reminders";
 
 /* Class = "UIViewController"; title = "Add new todo"; ObjectID = "kzm-Xc-g6d"; */
-"kzm-Xc-g6d.title" = "Add new todo";
+"kzm-Xc-g6d.title" = "Add new reminder";
 
 /* Class = "UINavigationItem"; title = "My todo's"; ObjectID = "mkP-Cm-edV"; */
-"mkP-Cm-edV.title" = "My todo's";
+"mkP-Cm-edV.title" = "My reminder";
 
 /* Class = "UITextField"; placeholder = "Title"; ObjectID = "vjx-YA-VkN"; */
 "vjx-YA-VkN.placeholder" = "Title";

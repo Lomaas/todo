@@ -32,15 +32,15 @@ class TodoViewController: UIViewController {
     }
     
     @IBAction func didPressSave(sender: AnyObject) {
-        let title = titleTextField.text
-        let description = count(descriptionTextfield.text) > 0 ? descriptionTextfield.text : ""
-        let location = annotationLocation
-        var todos = Todos.get()
+        let title = titleTextField.text!
+        let description = descriptionTextfield.text!.characters.count > 0 ? descriptionTextfield.text : ""
+        let location = annotationLocation!
+        let todos = Todos.get()
                 
-        let newTodo = Todo(id: NSUUID().UUIDString, title: title, details: description, location: location)
+        let newTodo = Todo(id: NSUUID().UUIDString, title: title, details: description!, location: location)
         if !isValidTodo(newTodo) { return }
         
-        if let todo = self.todo {
+        if let _ = self.todo {
             todos.todos = updateOldTodo(newTodo, todos: todos)
         } else {
             todos.todos.append(newTodo)
@@ -95,7 +95,7 @@ class TodoViewController: UIViewController {
     }
     
     func isValidTodo(todo: Todo) -> Bool {
-        if count(todo.title) < 1 {
+        if todo.title.characters.count < 1 {
             displayAlert(NSLocalizedString("titleToShort", comment: ""), descriptionAlert: NSLocalizedString("titleToShortDescription", comment: ""))
             return false
         }
@@ -104,7 +104,7 @@ class TodoViewController: UIViewController {
     }
     
     func displayAlert(titleAlert: String, descriptionAlert: String) {
-        var alert = UIAlertController(title: titleAlert, message: descriptionAlert, preferredStyle: UIAlertControllerStyle.Alert)
+        let alert = UIAlertController(title: titleAlert, message: descriptionAlert, preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
         self.presentViewController(alert, animated: true, completion: nil)
     }
@@ -115,7 +115,7 @@ class TodoViewController: UIViewController {
         
         mapView.setRegion(region, animated: true)
         
-        var point = MKPointAnnotation()
+        let point = MKPointAnnotation()
         point.coordinate = center
         point.title = "Todo location"
         annotationLocation = location
@@ -140,22 +140,22 @@ extension TodoViewController: UITextFieldDelegate {
 }
 
 extension TodoViewController: MKMapViewDelegate {
-    func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
         var view = mapView.dequeueReusableAnnotationViewWithIdentifier("annotationView")
         
         if view == nil {
             view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "annotationView")
-            view.draggable = true
-            view.annotation = annotation
+            view!.draggable = true
+            view!.annotation = annotation
         } else {
-            view.annotation = annotation
+            view!.annotation = annotation
         }
         return view
     }
     
-    func mapView(mapView: MKMapView!, annotationView view: MKAnnotationView!, didChangeDragState newState: MKAnnotationViewDragState, fromOldState oldState: MKAnnotationViewDragState) {
+    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, didChangeDragState newState: MKAnnotationViewDragState, fromOldState oldState: MKAnnotationViewDragState) {
         if newState == MKAnnotationViewDragState.Ending {
-            annotationLocation = Location(latitude: view.annotation.coordinate.latitude, longitude: view.annotation.coordinate.longitude)
+            annotationLocation = Location(latitude: view.annotation!.coordinate.latitude, longitude: view.annotation!.coordinate.longitude)
         }
     }
 }
@@ -163,6 +163,9 @@ extension TodoViewController: MKMapViewDelegate {
 extension TodoViewController: LocationManagerProtocol {
     func locationManager(didUpdateLocation location: Location) {
         locationManager.stopUpdatingLocation()
-        updateLocation(location)
+        
+        dispatch_async(dispatch_get_main_queue(),{
+            self.updateLocation(location)
+        })
     }
 }

@@ -1,16 +1,16 @@
 {
     "aps": {
         "alert": {
-            "body": "Test message",
-            "title": "Optional title"
+            "body": "Remember to buy toiletpaper",
+            "title": "Reminder"
         },
-        "category": "myCategory"
+        "category": "nearbyLocation"
     },
     
     "WatchKit Simulator Actions": [
         {
-            "title": "First Button",
-            "identifier": "firstButtonAction"
+            "title": "Done",
+            "identifier": "doneAction"
         }
     ],
     

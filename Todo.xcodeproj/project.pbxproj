@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8511BAF51B321818001AA576 /* Todo WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 859124EA1B11F26000D77734 /* Todo WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8511BAF81B321818001AA576 /* Todo WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 859124F71B11F26000D77734 /* Todo WatchKit App.app */; };
 		859124C51B11F20A00D77734 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859124C41B11F20A00D77734 /* AppDelegate.swift */; };
 		859124C71B11F20A00D77734 /* TodoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859124C61B11F20A00D77734 /* TodoTableViewController.swift */; };
 		859124CA1B11F20A00D77734 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 859124C81B11F20A00D77734 /* Main.storyboard */; };
@@ -17,10 +19,8 @@
 		859124F01B11F26000D77734 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859124EF1B11F26000D77734 /* InterfaceController.swift */; };
 		859124F21B11F26000D77734 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859124F11B11F26000D77734 /* NotificationController.swift */; };
 		859124F41B11F26000D77734 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 859124F31B11F26000D77734 /* Images.xcassets */; };
-		859124F81B11F26000D77734 /* Todo WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 859124F71B11F26000D77734 /* Todo WatchKit App.app */; };
 		859125001B11F26000D77734 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 859124FE1B11F26000D77734 /* Interface.storyboard */; };
 		859125021B11F26000D77734 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 859125011B11F26000D77734 /* Images.xcassets */; };
-		859125051B11F26000D77734 /* Todo WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 859124EA1B11F26000D77734 /* Todo WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8591250E1B11FF5500D77734 /* TodoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8591250D1B11FF5500D77734 /* TodoTableViewCell.swift */; };
 		859125101B1207BD00D77734 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8591250F1B1207BD00D77734 /* Todo.swift */; };
 		859125121B12083F00D77734 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859125111B12083F00D77734 /* Location.swift */; };
@@ -35,6 +35,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		8511BAF31B321818001AA576 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 859124B71B11F20A00D77734 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 859124E91B11F26000D77734;
+			remoteInfo = "Todo WatchKit Extension";
+		};
+		8511BAF61B321818001AA576 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 859124B71B11F20A00D77734 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 859124F61B11F26000D77734;
+			remoteInfo = "Todo WatchKit App";
+		};
 		859124D51B11F20A00D77734 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 859124B71B11F20A00D77734 /* Project object */;
@@ -42,32 +56,29 @@
 			remoteGlobalIDString = 859124BE1B11F20A00D77734;
 			remoteInfo = Todo;
 		};
-		859124F91B11F26000D77734 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 859124B71B11F20A00D77734 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 859124F61B11F26000D77734;
-			remoteInfo = "Todo WatchKit App";
-		};
-		859125031B11F26000D77734 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 859124B71B11F20A00D77734 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 859124E91B11F26000D77734;
-			remoteInfo = "Todo WatchKit Extension";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		8591250C1B11F26000D77734 /* Embed App Extensions */ = {
+		8511BAF91B321818001AA576 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				859125051B11F26000D77734 /* Todo WatchKit Extension.appex in Embed App Extensions */,
+				8511BAF51B321818001AA576 /* Todo WatchKit Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8511BAFA1B321818001AA576 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				8511BAF81B321818001AA576 /* Todo WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -174,7 +185,6 @@
 				859125151B1208B600D77734 /* cells */,
 				859125141B1208A700D77734 /* viewcontrollers */,
 				859125131B12089D00D77734 /* models */,
-				859124CB1B11F20A00D77734 /* Images.xcassets */,
 				859124C81B11F20A00D77734 /* Main.storyboard */,
 				859124CD1B11F20A00D77734 /* LaunchScreen.xib */,
 				859124C21B11F20A00D77734 /* Supporting Files */,
@@ -185,6 +195,7 @@
 		859124C21B11F20A00D77734 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				859124CB1B11F20A00D77734 /* Images.xcassets */,
 				859124C31B11F20A00D77734 /* Info.plist */,
 				85D0437F1B1215B7001620AC /* Localizable.strings */,
 			);
@@ -249,8 +260,8 @@
 		859125131B12089D00D77734 /* models */ = {
 			isa = PBXGroup;
 			children = (
-				8591250F1B1207BD00D77734 /* Todo.swift */,
 				85D043901B125498001620AC /* Notification.swift */,
+				8591250F1B1207BD00D77734 /* Todo.swift */,
 				859125161B12096700D77734 /* Todos.swift */,
 				859125111B12083F00D77734 /* Location.swift */,
 			);
@@ -300,12 +311,12 @@
 				859124BB1B11F20A00D77734 /* Sources */,
 				859124BC1B11F20A00D77734 /* Frameworks */,
 				859124BD1B11F20A00D77734 /* Resources */,
-				8591250C1B11F26000D77734 /* Embed App Extensions */,
+				8511BAFA1B321818001AA576 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				859125041B11F26000D77734 /* PBXTargetDependency */,
+				8511BAF71B321818001AA576 /* PBXTargetDependency */,
 			);
 			name = Todo;
 			productName = Todo;
@@ -341,27 +352,28 @@
 			buildRules = (
 			);
 			dependencies = (
-				859124FA1B11F26000D77734 /* PBXTargetDependency */,
 			);
 			name = "Todo WatchKit Extension";
 			productName = "Todo WatchKit Extension";
 			productReference = 859124EA1B11F26000D77734 /* Todo WatchKit Extension.appex */;
-			productType = "com.apple.product-type.watchkit-extension";
+			productType = "com.apple.product-type.watchkit2-extension";
 		};
 		859124F61B11F26000D77734 /* Todo WatchKit App */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 859125061B11F26000D77734 /* Build configuration list for PBXNativeTarget "Todo WatchKit App" */;
 			buildPhases = (
 				859124F51B11F26000D77734 /* Resources */,
+				8511BAF91B321818001AA576 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8511BAF41B321818001AA576 /* PBXTargetDependency */,
 			);
 			name = "Todo WatchKit App";
 			productName = "Todo WatchKit App";
 			productReference = 859124F71B11F26000D77734 /* Todo WatchKit App.app */;
-			productType = "com.apple.product-type.application.watchapp";
+			productType = "com.apple.product-type.application.watchapp2";
 		};
 /* End PBXNativeTarget section */
 
@@ -369,11 +381,17 @@
 		859124B71B11F20A00D77734 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = lomas;
 				TargetAttributes = {
 					859124BE1B11F20A00D77734 = {
 						CreatedOnToolsVersion = 6.3.2;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					859124D31B11F20A00D77734 = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -432,7 +450,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				859124F81B11F26000D77734 /* Todo WatchKit App.app in Resources */,
 				859124F41B11F26000D77734 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -487,20 +504,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		8511BAF41B321818001AA576 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 859124E91B11F26000D77734 /* Todo WatchKit Extension */;
+			targetProxy = 8511BAF31B321818001AA576 /* PBXContainerItemProxy */;
+		};
+		8511BAF71B321818001AA576 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 859124F61B11F26000D77734 /* Todo WatchKit App */;
+			targetProxy = 8511BAF61B321818001AA576 /* PBXContainerItemProxy */;
+		};
 		859124D61B11F20A00D77734 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 859124BE1B11F20A00D77734 /* Todo */;
 			targetProxy = 859124D51B11F20A00D77734 /* PBXContainerItemProxy */;
-		};
-		859124FA1B11F26000D77734 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 859124F61B11F26000D77734 /* Todo WatchKit App */;
-			targetProxy = 859124F91B11F26000D77734 /* PBXContainerItemProxy */;
-		};
-		859125041B11F26000D77734 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 859124E91B11F26000D77734 /* Todo WatchKit Extension */;
-			targetProxy = 859125031B11F26000D77734 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -567,6 +584,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -635,6 +653,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Todo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lomas.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -645,6 +664,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Todo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lomas.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -663,6 +683,7 @@
 				);
 				INFOPLIST_FILE = TodoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lomas.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Todo.app/Todo";
 			};
@@ -678,6 +699,7 @@
 				);
 				INFOPLIST_FILE = TodoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lomas.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Todo.app/Todo";
 			};
@@ -687,17 +709,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				IBSC_MODULE = Todo_WatchKit_Extension;
 				INFOPLIST_FILE = "Todo WatchKit App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lomas.Todo.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
-				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
@@ -705,13 +729,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = Todo_WatchKit_Extension;
 				INFOPLIST_FILE = "Todo WatchKit App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lomas.Todo.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
-				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
@@ -724,8 +750,12 @@
 				);
 				INFOPLIST_FILE = "Todo WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lomas.Todo.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
@@ -734,8 +764,12 @@
 			buildSettings = {
 				INFOPLIST_FILE = "Todo WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lomas.Todo.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};

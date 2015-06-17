@@ -12,17 +12,25 @@ class TodoTableViewController: UITableViewController {
     var tableData = [Todo]()
     
     @IBAction func didPressAddNewTodo(sender: AnyObject) {
-        println("addnewTodo")
+        print("addnewTodo")
         performSegueWithIdentifier("goToTodoViewController", sender: nil)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "handleRefreshTableView", name: "handleRefreshTableView", object: nil)
     }
     
     override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        handleRefreshTableView()
+    }
+    
+    func handleRefreshTableView() {
         tableData = Todos.get().todos
-        tableView.reloadData()
+        dispatch_async(dispatch_get_main_queue(), {
+            self.tableView.reloadData()
+        })
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -65,6 +73,7 @@ class TodoTableViewController: UITableViewController {
             tableData.removeAtIndex(indexPath.row)
             tableView.reloadData()
             Todos.deleteTodoWithId(todo.id)
+            Notification.deleteNotification(todo.id)
         }
     }
 }

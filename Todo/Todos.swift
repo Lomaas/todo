@@ -17,10 +17,10 @@ class Todos: NSObject, NSCoding {
     }
     
     static func todosCloseBy(userLocation: CLLocation) -> [Todo]? {
-        var todos = Todos.get()
-        var todosCloseBy = todos.todos.filter {
+        let todos = Todos.get()
+        let todosCloseBy = todos.todos.filter {
             if let todoLocation = $0.location {
-                var loc = CLLocation(latitude: todoLocation.latitude, longitude:todoLocation.latitude)
+                let loc = CLLocation(latitude: todoLocation.latitude, longitude:todoLocation.latitude)
                 
                 if loc.distanceFromLocation(userLocation) > Settings.getDistanceToNotify() {
                     return true
@@ -32,16 +32,16 @@ class Todos: NSObject, NSCoding {
     }
     
     static func deleteTodoWithId(id: String) {
-        var todos = Todos.get()
+        let todos = Todos.get()
         todos.todos = todos.todos.filter { $0.id != id}
         todos.save()
-        Notification.deleteNotification(id)
     }
     
     func save() {
         let encodedObject = NSKeyedArchiver.archivedDataWithRootObject(self)
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setObject(encodedObject, forKey: "todos")
+        defaults.synchronize()
     }
     
     static func get() -> Todos {
@@ -59,7 +59,7 @@ class Todos: NSObject, NSCoding {
     
     // MARK: NSCoding
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         self.todos = aDecoder.decodeObjectForKey("todos") as! [Todo]
     }
     

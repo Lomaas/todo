@@ -27,7 +27,7 @@ class Notification {
     }
     
     static func getShowedNotifications() -> [Notification] {
-        var todoDictionary = NSUserDefaults.standardUserDefaults().dictionaryForKey(ITEMS_KEY) ?? [:]
+        let todoDictionary = NSUserDefaults.standardUserDefaults().dictionaryForKey(ITEMS_KEY) ?? [:]
         let items = Array(todoDictionary.values)
         return items.map { Notification(id: $0["id"] as! String, date: $0["date"] as! NSDate) }
     }
@@ -35,5 +35,7 @@ class Notification {
     static func deleteNotification(id: String) {
         var todoDictionary = NSUserDefaults.standardUserDefaults().dictionaryForKey(Notification.ITEMS_KEY) ?? Dictionary()
         todoDictionary.removeValueForKey(id)
+        NSUserDefaults.standardUserDefaults().setObject(todoDictionary, forKey: Notification.ITEMS_KEY)
+        NSUserDefaults.standardUserDefaults().synchronize()        
     }
 }

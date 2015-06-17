@@ -24,7 +24,7 @@ class Todo: NSObject, NSCoding {
         }
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         self.id = aDecoder.decodeObjectForKey("id") as! String
         self.title = aDecoder.decodeObjectForKey("title") as! String
         self.details = aDecoder.decodeObjectForKey("details") as! String

@@ -17,7 +17,7 @@ class Location: NSObject, NSCoding {
         self.longitude = longitude
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         self.latitude = aDecoder.decodeObjectForKey("latitude") as! Double
         self.longitude = aDecoder.decodeObjectForKey("longitude") as! Double
     }

@@ -13,13 +13,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     let locationManager = LocationManager()
+    let notificationService = NotificationService()
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {        
+        notificationService.registerForNotification()
         locationManager.startUpdatingLocation()
-        application.registerUserNotificationSettings(
-            UIUserNotificationSettings(forTypes: .Alert | .Badge | .Sound, categories: nil)
-        )
-        
         return true
     }
 
@@ -35,6 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+        NSNotificationCenter.defaultCenter().postNotificationName("handleRefreshTableView", object: nil)
     }
 
     func applicationDidBecomeActive(application: UIApplication) {
@@ -43,8 +42,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        
     }
-
-
+    
+    func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings) {
+        
+        print(notificationSettings.types.rawValue)
+    }
+    
+    func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forLocalNotification notification: UILocalNotification, completionHandler: () -> Void) {
+        var bgIdentifier: UIBackgroundTaskIdentifier!
+        
+        bgIdentifier = UIApplication.sharedApplication().beginBackgroundTaskWithExpirationHandler({
+            UIApplication.sharedApplication().endBackgroundTask(bgIdentifier)
+        })
+        print("notificationActionOneIdent \(identifier)")
+        
+        if identifier == notificationActionOneIdent {
+            if let userInfo = notification.userInfo {
+                notificationService.gotNotification(userInfo)
+            }
+        } else if identifier == notificationActionTwoIdent {
+            // Ignore until now
+        }
+        
+        completionHandler()
+        UIApplication.sharedApplication().endBackgroundTask(bgIdentifier)
+    }
 }
 
