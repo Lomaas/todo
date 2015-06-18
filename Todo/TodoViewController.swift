@@ -1,11 +1,3 @@
-//
-//  TodoViewController.swift
-//  Todo
-//
-//  Created by Simen Johannessen on 24/05/15.
-//  Copyright (c) 2015 lomas. All rights reserved.
-//
-
 import UIKit
 import MapKit
 
@@ -14,7 +6,9 @@ protocol TodoViewControllerProtocol {
 }
 
 class TodoViewController: UIViewController {
+
     var delegate: TodoViewControllerProtocol?
+    
     var locationManager = LocationManager()
     var todo: Todo?
     var annotationLocation: Location?
@@ -23,8 +17,19 @@ class TodoViewController: UIViewController {
     @IBOutlet weak var addLocation: UIButton!
     @IBOutlet weak var mapView: MKMapView!
 
+    @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var titleTextField: UITextField! {
         didSet { titleTextField.delegate = self }
+    }
+
+    @IBAction func didPress(sender: AnyObject) {
+        datePicker.hidden = false
+        
+    }
+    
+    @IBAction func didChangeDatePickerValue(sender: AnyObject) {
+        todo?.date = datePicker.date
+        datePicker.hidden = true
     }
     
     @IBOutlet weak var descriptionTextfield: UITextField! {
@@ -33,12 +38,13 @@ class TodoViewController: UIViewController {
     
     @IBAction func didPressSave(sender: AnyObject) {
         let title = titleTextField.text!
-        let description = descriptionTextfield.text!.characters.count > 0 ? descriptionTextfield.text : ""
+        let todoDescription = descriptionTextfield.text!.characters.count > 0 ? descriptionTextfield.text! : ""
         let location = annotationLocation!
-        let todos = Todos.get()
-                
-        let newTodo = Todo(id: NSUUID().UUIDString, title: title, details: description!, location: location)
+        
+        let newTodo = Todo(id: NSUUID().UUIDString, title: title, details: todoDescription, location: location, date: NSDate())
         if !isValidTodo(newTodo) { return }
+        
+        let todos = Todos.get()
         
         if let _ = self.todo {
             todos.todos = updateOldTodo(newTodo, todos: todos)
@@ -114,7 +120,7 @@ class TodoViewController: UIViewController {
         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
         
         mapView.setRegion(region, animated: true)
-        
+
         let point = MKPointAnnotation()
         point.coordinate = center
         point.title = "Todo location"

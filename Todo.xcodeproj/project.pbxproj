@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8511BAF51B321818001AA576 /* Todo WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 859124EA1B11F26000D77734 /* Todo WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8511BAF81B321818001AA576 /* Todo WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 859124F71B11F26000D77734 /* Todo WatchKit App.app */; };
+		8564B62D1B331A270084FCCB /* AppleWatchCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8564B62C1B331A270084FCCB /* AppleWatchCommunicator.swift */; };
 		859124C51B11F20A00D77734 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859124C41B11F20A00D77734 /* AppDelegate.swift */; };
 		859124C71B11F20A00D77734 /* TodoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859124C61B11F20A00D77734 /* TodoTableViewController.swift */; };
 		859124CA1B11F20A00D77734 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 859124C81B11F20A00D77734 /* Main.storyboard */; };
@@ -84,6 +85,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8564B62C1B331A270084FCCB /* AppleWatchCommunicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleWatchCommunicator.swift; sourceTree = "<group>"; };
 		859124BF1B11F20A00D77734 /* Todo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		859124C31B11F20A00D77734 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		859124C41B11F20A00D77734 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -297,6 +299,7 @@
 			children = (
 				85D043881B12271F001620AC /* LocationManager.swift */,
 				85D0438A1B124C8A001620AC /* NotificationService.swift */,
+				8564B62C1B331A270084FCCB /* AppleWatchCommunicator.swift */,
 			);
 			name = services;
 			sourceTree = "<group>";
@@ -479,6 +482,7 @@
 				859124C51B11F20A00D77734 /* AppDelegate.swift in Sources */,
 				859125171B12096700D77734 /* Todos.swift in Sources */,
 				85D0438B1B124C8A001620AC /* NotificationService.swift in Sources */,
+				8564B62D1B331A270084FCCB /* AppleWatchCommunicator.swift in Sources */,
 				85D043911B125498001620AC /* Notification.swift in Sources */,
 				85D043891B12271F001620AC /* LocationManager.swift in Sources */,
 			);

@@ -1,19 +1,11 @@
-//
-//  ViewController.swift
-//  Todo
-//
-//  Created by Simen Johannessen on 24/05/15.
-//  Copyright (c) 2015 lomas. All rights reserved.
-//
-
 import UIKit
 
 class TodoTableViewController: UITableViewController {
     var tableData = [Todo]()
+    let appleWatchCommunicator = AppleWatchCommunicator()
     
     @IBAction func didPressAddNewTodo(sender: AnyObject) {
-        print("addnewTodo")
-        performSegueWithIdentifier("goToTodoViewController", sender: nil)
+       performSegueWithIdentifier("goToTodoViewController", sender: nil)
     }
     
     override func viewDidLoad() {
@@ -74,6 +66,7 @@ class TodoTableViewController: UITableViewController {
             tableView.reloadData()
             Todos.deleteTodoWithId(todo.id)
             Notification.deleteNotification(todo.id)
+            appleWatchCommunicator.sendRecentUpdate()
         }
     }
 }
@@ -81,6 +74,7 @@ class TodoTableViewController: UITableViewController {
 extension TodoTableViewController: TodoViewControllerProtocol {
     func didAddNewTodo() {
         navigationController?.popViewControllerAnimated(true)
+        appleWatchCommunicator.sendRecentUpdate()
     }
 }
 

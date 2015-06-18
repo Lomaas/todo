@@ -22,7 +22,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
         if (CLLocationManager.locationServicesEnabled()) {
             locationManager = CLLocationManager()
             locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
             locationManager.requestAlwaysAuthorization()
             locationManager.startUpdatingLocation()
         }

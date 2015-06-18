@@ -15,6 +15,6 @@ class Settings {
     }
     
     static func getTimeBetweenNotifications() -> Int {
-        return 3600
+        return 10
     }
 }

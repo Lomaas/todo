@@ -62,11 +62,30 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <segue destination="kzm-Xc-g6d" kind="show" identifier="goToTodoViewController" id="mpI-x1-DN4"/>
+                        <segue destination="yfG-yG-Wee" kind="show" identifier="fadsfsdaf" id="R85-7d-YOT"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wie-qh-RLg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="569" y="-19"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="UDy-lX-UcL">
+            <objects>
+                <viewController id="yfG-yG-Wee" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JX5-Y1-Xee"/>
+                        <viewControllerLayoutGuide type="bottom" id="Mgs-Uv-x4J"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UIe-Pl-jzJ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AP0-tY-guk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="569" y="741"/>
         </scene>
         <!--Add new todo-->
         <scene sceneID="2BK-dt-JZ4">
@@ -107,19 +126,43 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textField>
+                            <datePicker hidden="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="5ES-Ur-ONP">
+                                <rect key="frame" x="140" y="192" width="320" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="456319770.19020998">
+                                    <!--2015-06-18 11:29:30 +0000-->
+                                </date>
+                                <connections>
+                                    <action selector="didChangeDatePickerValue:" destination="kzm-Xc-g6d" eventType="valueChanged" id="BU6-bP-cZy"/>
+                                </connections>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eex-WF-LcF">
+                                <rect key="frame" x="518" y="152" width="62" height="30"/>
+                                <state key="normal" title="Add date">
+                                    <color key="titleColor" name="controlDarkShadowColor" catalog="System" colorSpace="catalog"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPress:" destination="kzm-Xc-g6d" eventType="touchUpInside" id="Am2-xe-hmb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="vjx-YA-VkN" firstAttribute="leading" secondItem="TWh-ZR-0Kh" secondAttribute="leadingMargin" id="1ie-Hh-8PB"/>
+                            <constraint firstItem="Eex-WF-LcF" firstAttribute="centerY" secondItem="G7H-Zt-CKE" secondAttribute="centerY" id="2Rl-bk-JWQ"/>
                             <constraint firstItem="MN9-A1-1To" firstAttribute="leading" secondItem="TWh-ZR-0Kh" secondAttribute="leadingMargin" id="2VA-Mn-7M7"/>
                             <constraint firstItem="MN9-A1-1To" firstAttribute="top" secondItem="vjx-YA-VkN" secondAttribute="bottom" constant="16" id="2sm-mH-VBE"/>
                             <constraint firstItem="vjx-YA-VkN" firstAttribute="top" secondItem="vci-X7-dhQ" secondAttribute="bottom" constant="16" id="5NU-Lc-eN5"/>
                             <constraint firstItem="vjx-YA-VkN" firstAttribute="trailing" secondItem="TWh-ZR-0Kh" secondAttribute="trailingMargin" id="8Az-A4-gp1"/>
                             <constraint firstItem="rbA-ed-Ro0" firstAttribute="top" secondItem="MN9-A1-1To" secondAttribute="bottom" constant="25" id="9RW-SY-Ieq"/>
+                            <constraint firstItem="5ES-Ur-ONP" firstAttribute="centerX" secondItem="TWh-ZR-0Kh" secondAttribute="centerX" id="B3J-xR-kS9"/>
                             <constraint firstItem="rbA-ed-Ro0" firstAttribute="leading" secondItem="TWh-ZR-0Kh" secondAttribute="leadingMargin" constant="-16" id="KQ0-fU-dpO"/>
                             <constraint firstAttribute="trailingMargin" secondItem="G7H-Zt-CKE" secondAttribute="trailing" id="NO4-uj-srf"/>
+                            <constraint firstItem="Eex-WF-LcF" firstAttribute="trailing" secondItem="G7H-Zt-CKE" secondAttribute="trailing" id="RoE-Sv-kWC"/>
+                            <constraint firstItem="5ES-Ur-ONP" firstAttribute="centerY" secondItem="TWh-ZR-0Kh" secondAttribute="centerY" id="bPH-Wa-pnz"/>
                             <constraint firstItem="MN9-A1-1To" firstAttribute="trailing" secondItem="TWh-ZR-0Kh" secondAttribute="trailingMargin" id="dTd-pd-doe"/>
+                            <constraint firstItem="Eex-WF-LcF" firstAttribute="leading" secondItem="G7H-Zt-CKE" secondAttribute="trailing" constant="-200" id="gCa-uP-5q3"/>
                             <constraint firstItem="P9g-Ws-e4E" firstAttribute="top" secondItem="G7H-Zt-CKE" secondAttribute="bottom" id="gT1-PK-oa1"/>
+                            <constraint firstItem="Eex-WF-LcF" firstAttribute="leading" secondItem="G7H-Zt-CKE" secondAttribute="trailing" constant="5" id="jsl-gc-ucB"/>
                             <constraint firstItem="P9g-Ws-e4E" firstAttribute="top" secondItem="rbA-ed-Ro0" secondAttribute="bottom" id="lHY-ni-gF9"/>
                             <constraint firstItem="rbA-ed-Ro0" firstAttribute="trailing" secondItem="TWh-ZR-0Kh" secondAttribute="trailingMargin" constant="16" id="pwW-hV-wea"/>
                             <constraint firstItem="MN9-A1-1To" firstAttribute="top" secondItem="vjx-YA-VkN" secondAttribute="bottom" constant="8" id="t05-lN-Lva"/>
@@ -129,6 +172,8 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="t05-lN-Lva"/>
+                                <exclude reference="gCa-uP-5q3"/>
+                                <exclude reference="jsl-gc-ucB"/>
                                 <exclude reference="gT1-PK-oa1"/>
                             </mask>
                         </variation>
@@ -144,6 +189,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="addLocation" destination="G7H-Zt-CKE" id="DzT-Li-1Z1"/>
+                        <outlet property="datePicker" destination="5ES-Ur-ONP" id="Z1v-F1-VTI"/>
                         <outlet property="descriptionTextfield" destination="MN9-A1-1To" id="Qbh-Cu-97p"/>
                         <outlet property="mapView" destination="rbA-ed-Ro0" id="kEZ-so-yGF"/>
                         <outlet property="titleTextField" destination="vjx-YA-VkN" id="mgQ-qD-azk"/>
