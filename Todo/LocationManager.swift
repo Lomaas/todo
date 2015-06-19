@@ -1,11 +1,3 @@
-//
-//  LocationManager.swift
-//  Todo
-//
-//  Created by Simen Johannessen on 24/05/15.
-//  Copyright (c) 2015 lomas. All rights reserved.
-//
-
 import Foundation
 import CoreLocation
 import UIKit
@@ -15,12 +7,12 @@ protocol LocationManagerProtocol {
 }
 
 class LocationManager: NSObject, CLLocationManagerDelegate {
-    var locationManager: CLLocationManager!
+    let locationManager = CLLocationManager()
+
     var delegate: LocationManagerProtocol?
     
     func startUpdatingLocation() {
         if (CLLocationManager.locationServicesEnabled()) {
-            locationManager = CLLocationManager()
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
             locationManager.requestAlwaysAuthorization()
@@ -30,6 +22,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     
     func stopUpdatingLocation() {
         locationManager.delegate = nil
+        locationManager.stopUpdatingLocation()
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [AnyObject]) {

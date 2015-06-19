@@ -20,9 +20,7 @@ class Todo: NSObject, NSCoding {
         self.id = id
         self.title = title
         self.details = details
-        if let location = location {
-            self.location = location
-        }
+        self.location = location
     }
     
     required init?(coder aDecoder: NSCoder) {

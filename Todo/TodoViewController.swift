@@ -52,7 +52,7 @@ class TodoViewController: UIViewController {
             todos.todos.append(newTodo)
         }
         
-        todos.save()
+        Todos.save(todos)
         delegate?.didAddNewTodo()
     }
     
